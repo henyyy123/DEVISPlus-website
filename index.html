@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="text-center">DevisPlus Formulaire</h1>
+    <!-- Table Data -->
+    <div class="container">
+        <hr>
+        <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Name">
+
+        <table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true">
+            <tr>
+                <th>Famille</th>
+                <th>Form</th>
+                <th>Question Decouverte</th>
+            </tr>
+            <tr>
+                <td>Adoucisseur</td>
+                <td>Adoucisseur</td>
+                <td>Combien de points d’eau souhaitez vous </td>
+            </tr>
+            <tr>
+                <td>Alarme</td>
+                <td>Alarme sans file ou filaire</td>
+                <td>Quelle zone souhaitez vous surveiller / Combien de portes ou fenêtres souhaitez vous surveiller</td>
+            </tr>
+            <tr>
+                <td>Alarme</td>
+                <td>Interphone</td>
+                <td>A quel étage souhaitez-vous installer le système</td>
+            </tr>
+            <tr>
+                <td>Alarme</td>
+                <td>Gardiennage</td>
+                <td>Quelle est la durée de la mission</td>
+            </tr>
+            <tr>
+                <td>Alarme</td>
+                <td>Rideau metalique</td>
+                <td>demande d'infos auprès du client</td>
+            </tr>
+            <tr>
+                <td>Alarme</td>
+                <td>Serrurerie</td>
+                <td>demande d'infos auprès du client</td>
+            </tr>
+            <tr>
+                <td>Alarme</td>
+                <td>Télésurveillance-Videosurveillance</td>
+                <td>demande d'infos auprès du client et voir alarme</td>
+            </tr>
+            <tr>
+                <td>Amenagement</td>
+                <td>Architecture-Intérieure</td>
+                <td>pièce concernée ?/ surface concerne en m ?/année de construction ?/état de bien ?/les pièces sont elles meublées </td>
+            </tr>
+            <tr>
+                <td>Amenagement</td>
+                <td>Déménagement</td>
+                <td>demande d'infos auprès du client</td>
+            </tr>
+            <tr>
+                <td>Amenagement</td>
+                <td>Placard-Dressing</td>
+                <td>surface concernée ?/Quel type de porte souhaitez vous installer</td>
+            </tr>
+            <tr>
+                <td>Amenagement</td>
+                <td>Travaux-Décoration</td>.
+                <td>combien de pièce ?</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Charpente</td>
+                <td>type de charpente (bois ou métallique) ?/surface toiture/hauteur</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Couverture-Toiture</td>
+                <td>type de toit(plat/incline)/type de couverture(tuiles/ardoise/zinc/acier,,,)
+                    surface de toiture ?/combien d’étage ?</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Fenetre-de-toit</td>
+                <td>nbre de fenêtre/taille de fenêtre/type de toiture</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Pose-gouttière</td>
+                <td>nbre d’étage longueur de gouttière/type:pvc/alu/zinc</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Récupération-eau-de-pluie</td>
+                <td>type de cuve,citerne »béton,plastique »</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Rénovation-Charpente</td>
+                <td>voir charpente</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Rénovation-Couverture-Toiture</td>
+                <td>voir Couverture-Toiture</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Rénovation-Tuiles</td>
+                <td>verifier le type des tuiles (tuiles terre cuite/mecanique/classique/plate/beton/photovoltaique)</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Toiture-mb</td>
+                <td>voir toiture</td>
+            </tr>
+            <tr>
+                <td>Charpente-toiture</td>
+                <td>Traitement-Toiture</td>
+                <td>traitement-toiture=demoussage-toiture +demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Ballon-Thermadynamique</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chaudière-Granulés-Bois</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-Bois</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-Elec-Rapide</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-Electrique</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-Fioul</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-gaz</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-mb</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-Solaire</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Chauffage-Eau</td>
+                <td>Type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’etage ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Cheminée</td>
+                <td>Style de cheminée moderne,rustique,classique/surface a installe/type de cheminée souhaitée 	</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Dépannage</td>
+                <td>demande d'infos auprès du client</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Energie-Renouvelable</td>
+                <td>demande d'infos auprès du client</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Entretien-Chauffage</td>
+                <td>demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Géothermie</td>
+                <td>voir chauffage</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Plancher-Chauffant</td>
+                <td>type de chauffage au sol circuit électrique/eau / posséder vous un local technique pour la chaudière/type d’énergie actuel ?/surface habitable ?/combien de pièce ?/combien d’étage/les surfaces a chauffer sont meubles ?/quel type de revêtement de sol disposer vous ?</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Poele-Bois</td>
+                <td>Surface a chauffer ? conduit fumée (installation/remplacement/réparation)
+                    type de bois?(bûches/granules/copeaux de bois/bûche calorifique)/
+                    </td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Poele-Granulés</td>
+                <td>Surface a chauffer ? conduit fumée (installation/remplacement/réparation)
+                    type de bois?(bûches/granules/copeaux de bois/bûche calorifique)/
+                    </td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Pompe-à-Chaleur</td>
+                <td>
+                    pompe a (chaleur air/air-eau/eau/géothermie)/surface habitable/combien de piece</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Pompe-à-Chaleur-Installation</td>
+                <td>voir pompe a Pompe-à-Chaleur</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Ramonage</td>
+                <td>nettoyage de cheminée</td>
+            </tr>
+            <tr>
+                <td>Chauffage</td>
+                <td>Remplacement</td>
+                <td>voir chauffage</td>
+            </tr>
+            <tr>
+                <td>Climatisation</td>
+                <td>Chauffage-Climatisation-Réversible</td>
+                <td>Quel type de climatiseur souhaitez vous ?/ combien de pièce ?/ surface concernée ?</td>
+            </tr>
+            <tr>
+                <td>Climatisation</td>
+                <td>Climatisation</td>
+                <td>voir Chauffage-Climatisation-Réversible</td>
+            </tr>
+            <tr>
+                <td>Climatisation</td>
+                <td>Puits-Canadien</td>
+                <td>Quel est la profondeur de puits?/permis de construire?/construction neuve ou rénovation?</td>
+            </tr>
+            <tr>
+                <td>Climatisation</td>
+                <td>Ventilation</td>
+                <td>combien de pièce concernée ?/surface totale concernée? </td>
+            </tr>
+            <tr>
+                <td>Climatisation</td>
+                <td>VMC</td>
+                <td>combien de pièce concernée ?/surface totale concernée? </td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Aménagement-de-combles</td>
+                <td>Quelle est l’année de construction ?/surface totale concernée? /Quel est le type de votre comble ?/demande plus d'infos sur le projet.</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Architecte-Construction-Maison</td>
+                <td>verifier le permis de construction?</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Assainissement</td>
+                <td>voir si il s'agit d'assainissement ou de fosse septique</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Bilan-Immobilier</td>
+                <td>Quel type de diagnostic souhaitez-vous?//Quelle est la nature de vos travaux(Diagnostic ou traitement)//le travail a-t-il déjà été réalise par le passe//surface concernée?//Combien d’étage?</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Echafaudage</td>
+                <td>voir si acier,alu,bois</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Gros-Œuvre</td>
+                <td>Quel type de construction souhaitez-vous?(parpaing,brique,ossature bois)///Quelle est la surface concernée?//Combien d’étage?</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Maçonnerie</td>
+                <td>Dans quelle pièce souhaitez-vous réaliser les travaux?//demande plus d'infos </td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Maison-Appartement-Logement-Neuf</td>
+                <td>Rien a signaler</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Maison-Bois</td>
+                <td>Rien a signaler//voir si Extension//demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Rénovation-Extension</td>
+                <td>Quelle l’année de construction de votre maison?//Surface de bien?//Quel type de construction de votre maison(parpaing,brique,ossature bois)//poser les mêmes questions sur l'extension//souhaitez-vous une extension par surréservation//</td>
+            </tr>
+            <tr>
+                <td>Construction-Renovation</td>
+                <td>Terrassement</td>
+                <td>Quelle est la surface a terrasser?// demande plus d'infos</td>
+            </tr>
+            <tr>
+                <td>Cuisine</td>
+                <td>Cuisine</td>
+                <td>Quel style de cuisine souhaitez-vous?(classique,moderne,rustique)?//souhaitez-vous déposer l'ancienne cuisine?//Quelle est la surface au sol de la cuisine?//travaux a prévoir?(plomberie,électricité,revêtement de sol,peinture)</td>
+            </tr>
+            <tr>
+                <td>Cuisine</td>
+                <td>Mobilier-de-cuisine</td>
+                <td>voir l'equipement souhaitée</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Antenne-TV</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Convecteur-Electrique</td>
+                <td>Combien de radiateurs souhaitez-vous?//type d'energie actuel?</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Eolien-Particulier</td>
+                <td>demander plus d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Installation-Electricité-Travaux</td>
+                <td>Dans quelle piece souhaitez-vous realiser les travaux?//demande plus d'infos</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Motorisation-Portail</td>
+                <td>Quel matériau souhaiteriez-vous installer?(Fer/Bois/Alu/PVC)</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Panneaux-Photovoltaiques</td>
+                <td>Pourquoi souhaitez-vous installer des panneaux solaires?/Combien de panneaux solaires souhaitez-vous?//Quelle est la surface des travaux?</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Petits-travaux-électricité</td>
+                <td>Dans quelle piece souhaitez-vous realiser les travaux?//demande plus d'infos</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Radiateur-Inertie</td>
+                <td>voir Convecteur-Electrique</td>
+            </tr>
+            <tr>
+                <td>Electricité</td>
+                <td>Rénovation-Electricité-Travaux</td>
+                <td>voir Installation-Electricité-Travaux</td>
+            </tr>
+            <tr>
+                <td>Escalier-Ascenseur</td>
+                <td>Ascenseur</td>
+                <td>Votre ascenseur dessert combien d’étages?</td>
+            </tr>
+            <tr>
+                <td>Escalier-Ascenseur</td>
+                <td>Escalier</td>
+                <td>Quelle est la hauteur de l'escalier a créer en centimètres?//ou souhaitez-vous installer l'escalier?//Quel type d'escalier souhaitez-vous?//Faut-il percer le plafond ou le plancher?</td>
+            </tr>
+            <tr>
+                <td>Escalier-Ascenseur</td>
+                <td>Fauteuil-Monte-Escalier</td>
+                <td>voir monte-escalier</td>
+            </tr>
+            <tr>
+                <td>Escalier-Ascenseur</td>
+                <td>Monte-Charge</td>
+                <td>Pour quel type de bâtiment?//demande d'infos aupres du client</td>
+            </tr>
+            <tr>
+                <td>Escalier-Ascenseur</td>
+                <td>Monte-Escalier</td>
+                <td>Votre monte-escalier dessert combien d’étages?//Votre projet concerne quel type d’escalier?(droit,tournant,en colimaçon)</td>
+            </tr>
+            <tr>
+                <td>Escalier-Ascenseur</td>
+                <td>Rénovation-Escalier</td>
+                <td>voir escalier</td>
+            </tr>
+            <tr>
+                <td>Façade</td>
+                <td>Nettoyage de Façade</td>
+                <td>Combien d’étage?//Quelle est la surface totale concernée?//Quel est le matériau de votre façade actuelle //Quel est le revêtement actuel de votre façade?</td>
+            </tr>
+            <tr>
+                <td>Isolation</td>
+                <td>Isolation-Combles</td>
+                <td>Quelle est la surface des combles ?// de quel type de combles disposer-vous(aménageable ou perdus)//Quel type de matériau souhaitez-vous?</td>
+            </tr>
+            <tr>
+                <td>Isolation</td>
+                <td>Isolation-Maison</td>
+                <td>Quel type de matériau souhaitez-vous?//Quelle est la surface a isoler?//voir si par l’intérieur ou l’extérieur</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Abattage-Arbre</td>
+                <td>demande d'infos aupres du client</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Abri-Terrasse</td>
+                <td>Rien a signaler//voir les matriaux </td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Abri-Voiture</td>
+                <td>Rien a signaler//voir les matriaux</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Carrelage-Extérieur</td>
+                <td>voir si pour le sol ou le mur//Quelle est la surface a carreler?//type de carrelage(céramique//terre cuites//carreau de verre//pierre naturelle)//souhaitez-vous déposer le revêtement actuel</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Clôtures</td>
+                <td>Quel type de matériau souhaitez-vous? sauf grillage//Quelle es la longueur de la clôture?//Quelle est la hauteur de la clôture//</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Création-Garage-Abri</td>
+                <td>Rien a signaler //voir les matriaux</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Eclairage-Extérieur</td>
+                <td>Quelle est la surface a éclairer?</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Elagage-Taille</td>
+                <td>Quel type de prestation souhaitez-vous?(tailler les arbres,enlever les arbres,enlever souches d'arbres)//Combien d'arbres sont concernée?//Quelle est la hauteur des arbres?//</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Enrobé</td>
+                <td>Quelle est la nature de vos travaux?(Goudronner un chemin,Rénover l'existant)//Quelle est la longueur a goudronner?</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Entretien-Service-à-la-personne</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Paysagiste-Création </td>
+                <td>Quelle est la surface du jardin?//voir si le client souhaite un entretien régulier?</td>
+            </tr>
+            <tr>
+                <td>Jardin</td>
+                <td>Terrasse-Bois</td>
+                <td>Quelle est la surface de la terrasse?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Changement-Vitre</td>
+                <td>pour quel type de fenêtre(alu/bois/PVC/porte-fenêtre/baie-vitre/coulissante)//type de vitrage souhaitée?(simple/double)//combien de fenêtre concernée?//les dimensions??</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Fenêtres-Devis-Gratuit</td>
+                <td>Quel type de matériau souhaite vous?(alu/bois/PVC/acier)//Combien de fenêtre a installer?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Fenêtres-Portes-Volets</td>
+                <td>Quel type de matériau souhaite vous?(alu/bois/PVC/acier)//Combien de fenêtre a installer?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Fenêtres-Portes-Volets-Stock-Fenêtre</td>
+                <td>Quel type de matériau souhaite vous?(alu/bois/PVC/acier)//Combien de fenêtre a installer?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Fermeture-de-Balcon</td>
+                <td>Quel type de matériau souhaite vous?(alu/bois/PVC/acier)</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Marquise</td>
+                <td>Quel type de matériau souhaite vous?(alu/bois/PVC/acier)</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Motorisation-Volet</td>
+                <td>Combien de volets souhaitez-vous installer?//type de matériau souhaitée?(alu,bois,PVC,métal)</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Pergola</td>
+                <td>longueur,largeur,hauteur en m?//demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Pergola-Bioclimatique</td>
+                <td>voir Pergola</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Portail</td>
+                <td>Quel matériau souhaiteriez-vous?(fer,bois,alu,PVC)</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Porte-Blindée</td>
+                <td>Quel matériau souhaiteriez-vous?(fer,bois,alu,PVC)//Combien de volets souhaitez-vous installer?//Quel type de volet souhaitez-vous (roulant/coulissant,battant)</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Porte-de-Garage</td>
+                <td>Combien de portes avez-vous besoin?//Souhaitez-vous motoriser les portes?//Quel type de porte de garage souhaitez-vous?(basculante,battante,pliante,coulissant,sectionnelle)//type de matériau souhaitée?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Porte-entrée</td>
+                <td>Combien de portes avez-vous besoin?//Quelle sont les dimensions de la porte en cm?//type de matériau souhaitée?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Portes-Intérieures</td>
+                <td>Combien de porte avez-vous besoin,//type de porte souhaitée?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Réparation-Volet-Roulant</td>
+                <td>voir volet</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>SAS-Entrée</td>
+                <td>Connaissez-vous les dimensions de la véranda?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Stores-Bannes </td>
+                <td>Quel type de store souhaitez-vous?(enrouleur,pour fenêtre,véranda,vertical,vénitien)//souhaitez-vous déposer les anciens stores?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Survitrage-Fenêtre</td>
+                <td>damande d'infos aupres du client</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Véranda</td>
+                <td>Quelle est la surface de la véranda?//Quel type de véranda souhaitez-vous?(alu,bois,PVC,fer,en kit)//vérifier permis de construire?</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Véranda-Amovible</td>
+                <td>voir veranda</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Véranda-prix</td>
+                <td>Rien a signaler</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Volets-Battants</td>
+                <td>Combien de volets souhaitez-vous installer?//type de matériau souhaitée?(alu,bois,PVC,métal)</td>
+            </tr>
+            <tr>
+                <td>Menuiserie</td>
+                <td>Volets-Roulants</td>
+                <td>Combien de volets souhaitez-vous installer?//type de matériau souhaitée?(alu,bois,PVC,métal)</td>
+            </tr>
+            <tr>
+                <td>Mur-Plafond</td>
+                <td>Plafond</td>
+                <td>demande plus d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Mur-Plafond</td>
+                <td>Plafond-Tendu</td>
+                <td>demande plus d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Mur-Plafond</td>
+                <td>Platrerie</td>
+                <td>demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Mur-Plafond</td>
+                <td>Pose-Lambris</td>
+                <td>verifier les materiaux dont besoin </td>
+            </tr>
+            <tr>
+                <td>Mur-Plafond</td>
+                <td>Pose-Papier-Peint</td>
+                <td>Combien de piece?//type de revetement souhaitee?(papier peint,tissu,tapisserie)//surface des murs?</td>
+            </tr>
+            <tr>
+                <td>Mur-Plafond</td>
+                <td>Travaux-Peinture</td>
+                <td>voir si interieur ou exterieur?//Si interieur voir si plafond ou mur?//Si exterieur voir les materiaux dont besoin(brique,parpaing,bois,pierre)surface a peindre?,Etat de surface?,Avez vous besoin de peindre autre surface?</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Abri-Piscine</td>
+                <td>Type : haut, bas, plat, volet La piscine est elle construite ? Piscine enterrée, semi enterrée ou hors sol ?Dimensions piscine
+                    Piscine béton, coque en kit ?</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Accessoires-Entretien-Piscine</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Bache-Barres</td>
+                <td>Dimensions piscine ?//La piscine est elle construite ? //Piscine enterrée, semi enterrée ou hors sol ?</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Construction-Piscine</td>
+                <td>Piscine enterrée, semi enterrée ou hors sol ?Coque, béton, en kit ?Dimensions piscine ?Si budget prévu ?</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Piscine-Béton</td>
+                <td>Piscine enterrée, semi enterrée ou hors sol ?Coque, béton, en kit ?Dimensions piscine ?Si budget prévu ?</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Piscine-Bois</td>
+                <td>Piscine enterrée, semi enterrée ou hors sol ?Coque, béton, en kit ?Dimensions piscine ?Si budget prévu ?</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Piscine-Devis-Prix</td>
+                <td>voir piscine</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Piscine-Hors-Sol</td>
+                <td>dupliquer en piscine hors sol, avec les commentaires de qualifications//+ qualifier la demande mère piscine « classique » en non qualifiée et noter en "Motif principal de non qualité "Le projet est trop petit" </td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Piscine-Kit</td>
+                <td>voir piscine</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Sécurité-Piscine</td>
+                <td>Quel système de sécurité souhaitez-vous pour votre piscine?//type de piscine?//les dimensions de la piscine?</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Volet-Piscine</td>
+                <td>Dimension piscine//La piscine est elle construite ? </td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Dépannage-Plombier</td>
+                <td>demande plus d'infos aupres du client</td>
+            </tr>
+            <tr>
+                <td>Piscine</td>
+                <td>Installation-Plomberie</td>
+                <td>demande plus d'infos aupres du client</td>
+            </tr>
+            <tr>
+                <td>Revêtement-Sol</td>
+                <td>Carrelage</td>
+                <td>voir si pour le sol ou le mur//Quelle est la surface a carreler?//type de carrelage(céramique//terre cuites//carreau de verre//pierre naturelle)//souhaitez-vous déposer le revêtement actuel</td>
+            </tr>
+            <tr>
+                <td>Revêtement-Sol</td>
+                <td>Chape</td>
+                <td>Combien de pièces sont concernée?//Quelle est la surface totale a créer?//Souhaitez-vous déposer le revêtement actuel?</td>
+            </tr>
+            <tr>
+                <td>Revêtement-Sol</td>
+                <td>Moquette</td>
+                <td>Combien de pièces sont concernée?//Quelle est la surface totale a créer?//Souhaitez-vous déposer le revêtement actuel?</td>
+            </tr>  
+            <tr>
+                <td>Revêtement-Sol</td>
+                <td>Parquet</td>
+                <td>Quel type de parquet souhaitez-vous?(bois massif,contrecolle,stratifie)//Combien de pièce sont concernée?//Quelle est la surface totale a créer?//type de parquet a voir (flottant/colle/cloue)//Souhaiter-vous déposer le revêtement actuel</td>
+            </tr>
+            <tr>
+                <td>Revêtement-Sol</td>
+                <td>Rénovation-Parquet</td>
+                <td>voir parquet</td>
+            </tr>
+            <tr>
+                <td>Revêtement-Sol</td>
+                <td>Sol-Plastifié</td>
+                <td>Quel type de revêtement souhaitez-vous installer?(sol plastique clipsable ou colle , vinyle,linoleum)//Combien de pièces sont concernées?//Surface totale a créer?</td>
+            </tr>
+            <tr>
+                <td>Salle-de-Bains</td>
+                <td>Baignoire-à-Porte</td>
+                <td>Si le projet consiste à créer une ouverture dans une baignoire existante, la fiche est à classer : Le projet est trop petit</td>
+            </tr>
+            <tr>
+                <td>Salle-de-Bains</td>
+                <td>Douche-Sécurisée</td>
+                <td>verifier la surface de salle de bain?//demande d'infos si besoin?</td>
+            </tr>
+            <tr>
+                <td>Salle-de-Bains</td>
+                <td>Jacuzzi-Spa</td>
+                <td>demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Salle-de-Bains</td>
+                <td>Salle-de-bains</td>
+                <td>Surface de salle de bain?//Souhaitez-vous déposer les équipements actuels?//Que souhaitez-vous installer,rénover ou déplacer?</td>
+            </tr>   
+            <tr>
+                <td>Salle-de-Bains</td>
+                <td>Sauna</td>
+                <td>demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Salle-de-Bains</td>
+                <td>Spa-de-nage</td>
+                <td>demande d'infos si besoin</td>
+            </tr>
+            <tr>
+                <td>Traitements</td>
+                <td>Humidité</td>
+                <td>Rien a signaler</td>
+            </tr>
+            <tr>
+                <td>Traitements</td>
+                <td>Nettoyage</td>
+                <td>Rien a signaler</td>
+            </tr>
+            <tr>
+                <td>Traitements</td>
+                <td>Pollution-Intérieure</td>
+                <td>Rien a signaler</td>
+            </tr>
+            <tr>
+                <td>Traitements</td>
+                <td>Traitement-Bois-Charpente</td>
+                <td>Rien a signaler</td>
+            </tr>
+            <tr>
+                <td>Traitements</td>
+                <td>Traitement-Eau</td>
+                <td>Rien a signaler//(ca n'a rien avoir les eaux usee)</td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="application/javascript">
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+
+            //Intialising Variables
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+<footer></footer>
+
+</html>
